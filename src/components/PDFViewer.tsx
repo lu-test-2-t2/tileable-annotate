@@ -7,8 +7,8 @@ import { Separator } from "@/components/ui/separator";
 import { toast } from "sonner";
 import { AnnotationTool, PDFFile } from "./PDFAnnotationApp";
 
-// Set up PDF.js worker
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+// Set up PDF.js worker - using a more reliable CDN
+pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 interface PDFViewerProps {
   pdfFile: PDFFile;

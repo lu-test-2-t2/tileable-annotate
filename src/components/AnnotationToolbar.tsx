@@ -6,6 +6,7 @@ import {
   Circle, 
   Triangle,
   Minus,
+  Hexagon,
   Palette,
   Save,
   ZoomIn,
@@ -85,7 +86,7 @@ export const AnnotationToolbar = ({
       id: 'polygon',
       name: 'Polygon',
       type: 'polygon' as const,
-      icon: Square, // Using Square as placeholder for polygon
+      icon: Hexagon,
       tooltip: 'Draw custom polygons'
     }
   ];
