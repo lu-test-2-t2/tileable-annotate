@@ -2,41 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* PDF Annotation App Design System - Professional document-focused palette */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* App Background - Clean document white */
+    --background: 0 0% 98%;
+    --foreground: 215 25% 27%;
 
+    /* Card/Panel Colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 27%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 27%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Professional Blue for tools and actions */
+    --primary: 210 100% 56%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 210 100% 50%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Light gray for UI elements */
+    --secondary: 210 17% 93%;
+    --secondary-foreground: 215 25% 27%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* PDF Viewer specific colors */
+    --pdf-background: 0 0% 96%;
+    --pdf-shadow: 210 25% 15%;
+    --annotation-highlight: 47 100% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Tool colors */
+    --tool-active: 210 100% 56%;
+    --tool-hover: 210 17% 93%;
+    --tool-border: 210 20% 85%;
 
+    /* Muted colors for less important elements */
+    --muted: 210 17% 93%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent - Warning orange for important actions */
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive - Keep existing red */
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders and inputs */
+    --border: 210 20% 85%;
+    --input: 210 20% 85%;
+    --ring: 210 100% 56%;
 
-    --radius: 0.5rem;
+    /* Gradients for beautiful effects */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 56%), hsl(210 100% 50%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 17% 98%));
+
+    /* Shadows for depth */
+    --shadow-soft: 0 2px 10px -2px hsl(210 25% 15% / 0.1);
+    --shadow-medium: 0 4px 20px -4px hsl(210 25% 15% / 0.15);
+    --shadow-strong: 0 8px 30px -8px hsl(210 25% 15% / 0.2);
+
+    /* Animation and transitions */
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +86,46 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark theme for PDF annotation app */
+    --background: 215 28% 17%;
+    --foreground: 210 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 215 28% 20%;
+    --card-foreground: 210 20% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 215 28% 20%;
+    --popover-foreground: 210 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 210 100% 60%;
+    --primary-foreground: 215 28% 17%;
+    --primary-hover: 210 100% 55%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 215 25% 25%;
+    --secondary-foreground: 210 20% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --pdf-background: 215 28% 22%;
+    --pdf-shadow: 215 50% 5%;
+    --annotation-highlight: 47 100% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --tool-active: 210 100% 60%;
+    --tool-hover: 215 25% 25%;
+    --tool-border: 215 20% 35%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --muted: 215 25% 25%;
+    --muted-foreground: 215 10% 65%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --accent: 25 95% 55%;
+    --accent-foreground: 215 28% 17%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 210 20% 95%;
+
+    --border: 215 20% 35%;
+    --input: 215 20% 35%;
+    --ring: 210 100% 60%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 60%), hsl(210 100% 55%));
+    --gradient-subtle: linear-gradient(180deg, hsl(215 28% 20%), hsl(215 28% 22%));
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
